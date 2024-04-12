@@ -1,26 +1,30 @@
 body {
-    background-image: url('bc523.gif');
+    background: linear-gradient(109.6deg, rgb(6, 2, 2) 32.4%, rgb(137, 30, 47) 98.8%);
     background-attachment: fixed;
     background-position: absolute;
     color: #ffffff;
     font-family: 'Comic Sans MS', cursive;
     user-select: none;
-}
-html {
+  }
+  
+  html {
     scroll-behavior: smooth;
-}
-.container {
+  }
+  
+  .container {
     width: 60%;
     margin: 0 auto;
-}
-.buttons {
+  }
+  
+  .buttons {
     display: flex;
     justify-content: space-between;
     margin-bottom: 20px;
     position: relative;
     z-index: 1;
-}
-.button {
+  }
+  
+  .button {
     background-color: transparent;
     color: #ffffff;
     text-decoration: none;
@@ -30,21 +34,26 @@ html {
     text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 15px #ffffff;
     font-size: 20px;
     user-select: none;
-}
-.button:hover {
+  }
+  
+  .button:hover {
     background-color: #222222;
     transform: scale(1.1);
-}
-.discord {
+  }
+  
+  .discord {
     margin-left: 20px;
-}
-.github {
+  }
+  
+  .github {
     margin-right: 20px;
-}
-.steam {
+  }
+  
+  .steam {
     margin-right: 20px;
-}
-.info-box {
+  }
+  
+  .info-box {
     background-color: transparent;
     padding: 20px;
     text-align: center;
@@ -56,8 +65,10 @@ html {
     user-select: none;
     position: relative;
     z-index: 2;
-}
-.info-box:hover {
+  }
+  
+  .info-box:hover {
     background-color: #222222;
     transform: scale(1.1);
-}
+  }
+  

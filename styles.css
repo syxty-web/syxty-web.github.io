@@ -1,74 +1,73 @@
 body {
-    background: linear-gradient(109.6deg, rgb(6, 2, 2) 32.4%, rgb(137, 30, 47) 98.8%);
-    background-attachment: fixed;
-    background-position: absolute;
-    color: #ffffff;
-    font-family: 'Comic Sans MS', cursive;
-    user-select: none;
-  }
-  
-  html {
-    scroll-behavior: smooth;
-  }
-  
-  .container {
-    width: 60%;
-    margin: 0 auto;
-  }
-  
-  .buttons {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
-    position: relative;
-    z-index: 1;
-  }
-  
-  .button {
-    background-color: transparent;
-    color: #ffffff;
-    text-decoration: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 15px #ffffff;
-    font-size: 20px;
-    user-select: none;
-  }
-  
-  .button:hover {
-    background-color: #222222;
-    transform: scale(1.1);
-  }
-  
-  .discord {
-    margin-left: 20px;
-  }
-  
-  .github {
-    margin-right: 20px;
-  }
-  
-  .steam {
-    margin-right: 20px;
-  }
-  
-  .info-box {
-    background-color: transparent;
-    padding: 20px;
-    text-align: center;
-    text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 15px #ffffff;
-    margin-top: 50px;
-    font-size: 20px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    border-radius: 10px;
-    user-select: none;
-    position: relative;
-    z-index: 2;
-  }
-  
-  .info-box:hover {
-    background-color: #222222;
-    transform: scale(1.1);
-  }
-  
+  background: linear-gradient(109.6deg, rgb(6, 2, 2) 32.4%, rgb(137, 30, 47) 98.8%);
+  background-attachment: fixed;
+  background-position: absolute;
+  color: #ffffff;
+  font-family: 'Comic Sans MS', cursive;
+  user-select: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.button {
+  background-color: transparent;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 15px #ffffff;
+  font-size: 20px;
+  user-select: none;
+}
+
+.button:hover {
+  background-color: #222222;
+  transform: scale(1.1);
+}
+
+.discord {
+  margin-left: 20px;
+}
+
+.github {
+  margin-right: 20px;
+}
+
+.steam {
+  margin-right: 20px;
+}
+
+.info-box {
+  background-color: transparent;
+  padding: 20px;
+  text-align: center;
+  text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 15px #ffffff;
+  margin-top: 50px;
+  font-size: 20px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  border-radius: 10px;
+  user-select: none;
+  position: relative;
+  z-index: 2;
+}
+
+.info-box:hover {
+  background-color: #222222;
+  transform: scale(1.1);
+}

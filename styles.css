@@ -1,6 +1,7 @@
 body {
     background-image: url('bc523.gif');
     background-attachment: fixed;
+    background-position: absolute;
     color: #ffffff;
     font-family: 'Comic Sans MS', cursive;
     user-select: none;

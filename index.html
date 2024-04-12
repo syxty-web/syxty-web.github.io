@@ -7,22 +7,21 @@
     <link rel="icon" type="image/x-icon" href="6TIcon.ico">
     <link rel="stylesheet" type="text/css" href="style.css">
     <style>
-        body {
-            background-image: url('science-moon.gif');
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-position: center center;
-            height: 100vh;
-            margin: 0;
-            padding: 0;
-        }
-        
-        .button {
-            background-color: transparent;
+    body {
+    background-color: #000000;
+    background-image: url('background3.gif');
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+}
+.button {
+            background-color: #000000;
             color: #ffffff;
             text-decoration: none;
-            padding: 40px 40gpx;
-            font-size: 30px;
+            padding: 20px 40px;
+            font-size: 24px;
             border-radius: 5px;
             transition: background-color 0.3s ease, transform 0.3s ease;
             text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 15px #ffffff;
@@ -30,15 +29,41 @@
             -moz-user-select: none; /* Firefox */
             -ms-user-select: none; /* Internet Explorer/Edge */
             user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
+            position: relative;
+            margin-top: 50px;
         }
 
-        .info-box {
+.button:hover::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            width: calc(100% + 4px);
+            height: calc(100% + 4px);
+            border-radius: 5px;
+            box-shadow: 0 0 0 2px red;
+            animation: light 1s linear infinite;
+        }
+
+      @keyframes light {
+            0% {
+                box-shadow: 0 0 0 2px red;
+            }
+            50% {
+                box-shadow: 0 0 10px 2px red;
+            }
+            100% {
+                box-shadow: 0 0 0 2px red;
+            }
+        }
+
+.info-box {
             background-color: transparent;
             padding: 40px;
-            font-size: 36px;
             text-align: center;
             text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 15px #ffffff;
-            margin-top: 20%;
+            margin: 50px auto;
+            width: 50%;
             transition: background-color 0.3s ease, transform 0.3s ease;
             border-radius: 10px;
             -webkit-user-select: none; /* Safari */
@@ -50,6 +75,10 @@
 </head>
 <body>
     <div class="container">
+        <audio loop>
+            <source src="moonlightsonata.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.>
+            </audio>
         <div class="buttons">
             <a href="https://discord.gg/sPyg9FQ9EK" class="button discord">Discord</a>
             <a href="https://github.com/syxty-web" class="button github">Github</a>
@@ -59,8 +88,5 @@
             <p>Hey, you can call me 6T, pronounced like the number 60. I am a 14-year-old boy from Canada who speaks French/English and likes computers and anything techie in general. I made this, so people could reach to me if they had any questions/problems on their computers/phone, I am always here to help. If you are interested into reaching out to me, feel free to join my Discord in my social buttons above!</p>
         </div>
     </div>
-    <audio autoplay loop style="display: none;">
-        <source src="moonlightsonata.mp3" type="audio/mpeg">
-    </audio>
 </body>
 </html>

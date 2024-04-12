@@ -7,9 +7,26 @@
     <title>6T's Crib</title>
     <link rel="icon" type="image/x-icon" href="6TIcon.ico">
     <link rel="stylesheet" type="text/css" href="styles.css">
+    <style>
+      .game-container {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+      }
+
+      iframe {
+        border: none;
+        margin: auto;
+      }
+
+    </style>
   </head>
 
   <body>
+    <footer>
+    </footer>
     <div class="container">
       <audio loop="">
         <source src="moonlightsonata.mp3" type="audio/mpeg"> Your browser does not support the audio element.</source>
@@ -22,7 +39,9 @@
       <div class="info-box">
         <p>Hey, you can call me 6T, pronounced like the number 60. I am a 14-year-old boy from Canada who speaks French/English and likes computers and anything techie in general. I made this, so people could reach to me if they had any questions/problems on their computers/phone, I am always here to help. If you are interested into reaching out to me, feel free to join my Discord in my social buttons above!</p>
       </div>
-      <iframe src="https://1000webgames.com/games/semidrivertrailer/html5/" width="960" height="540" frameborder="0" scrolling="no"></iframe>
+      <div class="game-container">
+        <iframe src="https://1000webgames.com/games/semidrivertrailer/html5/" width="960" height="540" frameborder="0" scrolling="no"></iframe>
+      </div>
     </div>
   </body>
 

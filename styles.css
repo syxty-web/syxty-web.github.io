@@ -5,16 +5,13 @@ body {
     font-family: 'Comic Sans MS', cursive;
     user-select: none;
 }
-
 html {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
-
 .container {
     width: 60%;
     margin: 0 auto;
 }
-
 .buttons {
     display: flex;
     justify-content: space-between;
@@ -22,7 +19,6 @@ html {
     position: relative;
     z-index: 1;
 }
-
 .button {
     background-color: transparent;
     color: #ffffff;
@@ -34,24 +30,19 @@ html {
     font-size: 20px;
     user-select: none;
 }
-
 .button:hover {
     background-color: #222222;
     transform: scale(1.1);
 }
-
 .discord {
     margin-left: 20px;
 }
-
 .github {
     margin-right: 20px;
 }
-
 .steam {
     margin-right: 20px;
 }
-
 .info-box {
     background-color: transparent;
     padding: 20px;
@@ -65,7 +56,6 @@ html {
     position: relative;
     z-index: 2;
 }
-
 .info-box:hover {
     background-color: #222222;
     transform: scale(1.1);

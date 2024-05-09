@@ -1,21 +1,16 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>6T's Crib</title>
-  <link rel="icon" type="image/x-icon" href="6TIcon.ico">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" crossorigin="anonymous">
-  <link href="https://fonts.googleapis.com/css?family=Karla:400,900|PT+Sans+Narrow|Yantramanav:400,900|Roboto:900,400|Bangers|Krona+One|Nunito:400,900|Frank+Ruhl+Libre:400,900|Oswald:400,900|Source+Serif+Pro|Work+Sans:400,900|Open+Sans|Raleway|Lato|Passion+One|Lateef|Crimson+Text|Baloo+Paaji+2|Jost|Oswald|Montserrat|Lexend+Deca|Bungee+Shade|Rubik|Inter:400,900|Bebas+Neue|Syncopate:400,700|VT323:400,900|Poppins:400,900|Fredoka+One:400,900|Staatliches:400,900|Redacted+Script:400,900|Rubik+Pixels:400,900|Cute+Font:400,900|Kosugi+Maru:400,900|Darumadrop+One:400,900|Kaisei+Decol:400,900|Playfair+Display:400,900|Rubik+Doodle+Shadow:400,900|Shadows+Into+Light:400,900|M+PLUS+1:400,900|Zeyada:400,900|Rock+Salt:400,900|Leckerli+One:400,900|Space+Mono:400,900|Finger+Paint:400,900" rel="stylesheet">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <style type="text/css" id="operaUserStyle">
-      video {
-        filter: -opera-shader(url(data:text/plain;base64,Ly8gaHR0cHM6Ly9naXRodWIuY29tL0dQVU9wZW4tRWZmZWN0cy9GaWRlbGl0eUZYLUNBUwovLyB2MwoKdW5pZm9ybSBzaGFkZXIgaUNodW5rOwp1bmlmb3JtIGZsb2F0MiBpQ2h1bmtTaXplOwp1bmlmb3JtIGZsb2F0MiBpTW91c2U7CnVuaWZvcm0gZmxvYXQgaUFyZ3NbMV07Cgpjb25zdCBmbG9hdCBFUFNJT04gPSAwLjE7CmNvbnN0IGZsb2F0IFZfTUlOID0gMDsKY29uc3QgZmxvYXQgVl9MT1cgPSAwLjI1Owpjb25zdCBmbG9hdCBWX01FRCA9IDAuNTsKY29uc3QgZmxvYXQgVl9ISUdIID0gMC43NTsKY29uc3QgZmxvYXQgVl9NQVggPSAxOwoKY29uc3QgZmxvYXQgVEhSRVNIT0xEX0FSRUEgPSA4MDAgKiA2MDA7CmNvbnN0IGZsb2F0IE1JTl9BUkVBID0gNDAwICogMTAwOwpjb25zdCBmbG9hdCBNSU5fU1RSSVAgPSAyMDsKY29uc3QgZmxvYXQgTUFSR0lOID0gMTsKCmZsb2F0MyBwaXhlbChpbnQgeCwgaW50IHksIGZsb2F0MiB4eSkgewogICAgcmV0dXJuIGlDaHVuay5ldmFsKHh5ICsgZmxvYXQyKHgsIHkpKS5yZ2I7Cn0KCmZsb2F0MyBzaGFycGVuKGZsb2F0MiB4eSkgewogICAgZmxvYXQzIGYgPQogICAgICAgIHBpeGVsKC0xLCAtMSwgeHkpICogIDEgKwogICAgICAgIHBpeGVsKCAwLCAtMSwgeHkpICogLTEgKwogICAgICAgIHBpeGVsKCAxLCAtMSwgeHkpICogIDEgKwoKICAgICAgICBwaXhlbCgtMSwgMCwgeHkpICogLTEgICsKICAgICAgICBwaXhlbCggMCwgMCwgeHkpICogLTEgICsKICAgICAgICBwaXhlbCggMSwgMCwgeHkpICogLTEgICsKCiAgICAgICAgcGl4ZWwoLTEsIDEsIHh5KSAqIDEgICArCiAgICAgICAgcGl4ZWwoIDAsIDEsIHh5KSAqIC0xICArCiAgICAgICAgcGl4ZWwoIDEsIDEsIHh5KSAqIDE7CiAgICByZXR1cm4gZiAvIC0xOwp9CgpmbG9hdDQgUkdYMihmbG9hdDIgeHkpIHsKICAgIGZsb2F0NCBjb2xvciA9IGlDaHVuay5ldmFsKHh5KTsKCiAgICBpZiAoaUNodW5rU2l6ZS54ICogaUNodW5rU2l6ZS55IDwgTUlOX0FSRUEpIHsKICAgICAgICByZXR1cm4gY29sb3I7CiAgICB9CgogICAgaWYgKGlDaHVua1NpemUueSA8IE1JTl9TVFJJUCB8fCBpQ2h1bmtTaXplLnggPCBNSU5fU1RSSVApIHsKICAgICAgICByZXR1cm4gY29sb3I7CiAgICB9CgogICAgaWYgKHh5LnggPCBNQVJHSU4gfHwgeHkueCA+IChpQ2h1bmtTaXplLnggLSBNQVJHSU4pIHx8CiAgICAgICAgeHkueSA8IE1BUkdJTiB8fCB4eS55ID4gKGlDaHVua1NpemUueSAtIE1BUkdJTikpIHsKICAgICAgICByZXR1cm4gY29sb3I7CiAgICB9CgogICAgcmV0dXJuIGZsb2F0NChzaGFycGVuKHh5KSwgMSk7Cn0KCmZsb2F0IG1pbjMoZmxvYXQgeCwgZmxvYXQgeSwgZmxvYXQgeikgewogICAgcmV0dXJuIG1pbih4LCBtaW4oeSwgeikpOwp9CgpmbG9hdCBtYXgzKGZsb2F0IHgsIGZsb2F0IHksIGZsb2F0IHopIHsKICAgIHJldHVybiBtYXgoeCwgbWF4KHksIHopKTsKfQoKZmxvYXQgcmNwKGZsb2F0IHYpIHsKICAgIHJldHVybiAxIC8gdjsKfQoKZmxvYXQzIFJHWDMoZmxvYXQyIHh5LCBmbG9hdCBzdHJlbmd0aCkgewogICAgZmxvYXQzIGEgPSBwaXhlbCgtMSwgLTEsIHh5KTsKICAgIGZsb2F0MyBiID0gcGl4ZWwoIDAsIC0xLCB4eSk7CiAgICBmbG9hdDMgYyA9IHBpeGVsKCAxLCAtMSwgeHkpOwoKICAgIGZsb2F0MyBkID0gcGl4ZWwoLTEsIDAsIHh5KTsKICAgIGZsb2F0MyBlID0gcGl4ZWwoIDAsIDAsIHh5KTsKICAgIGZsb2F0MyBmID0gcGl4ZWwoIDEsIDAsIHh5KTsKCiAgICBmbG9hdDMgZyA9IHBpeGVsKC0xLCAxLCB4eSk7CiAgICBmbG9hdDMgaCA9IHBpeGVsKCAwLCAxLCB4eSk7CiAgICBmbG9hdDMgaSA9IHBpeGVsKCAxLCAxLCB4eSk7CgogICAgZmxvYXQgbW5SID0gbWluMyhtaW4zKGQuciwgZS5yLCBmLnIpLCBiLnIsIGgucik7CiAgICBmbG9hdCBtbkcgPSBtaW4zKG1pbjMoZC5nLCBlLmcsIGYuZyksIGIuZywgaC5nKTsKICAgIGZsb2F0IG1uQiA9IG1pbjMobWluMyhkLmIsIGUuYiwgZi5iKSwgYi5iLCBoLmIpOwoKICAgIGZsb2F0IG1uUjIgPSBtaW4zKG1pbjMobW5SLCBhLnIsIGMuciksIGcuciwgaS5yKTsKICAgIGZsb2F0IG1uRzIgPSBtaW4zKG1pbjMobW5HLCBhLmcsIGMuZyksIGcuZywgaS5nKTsKICAgIGZsb2F0IG1uQjIgPSBtaW4zKG1pbjMobW5CLCBhLmIsIGMuYiksIGcuYiwgaS5iKTsKCiAgICBtblIgPSBtblIgKyBtblIyOwogICAgbW5HID0gbW5HICsgbW5HMjsKICAgIG1uQiA9IG1uQiArIG1uQjI7CgogICAgZmxvYXQgbXhSID0gbWF4MyhtYXgzKGQuciwgZS5yLCBmLnIpLCBiLnIsIGgucik7CiAgICBmbG9hdCBteEcgPSBtYXgzKG1heDMoZC5nLCBlLmcsIGYuZyksIGIuZywgaC5nKTsKICAgIGZsb2F0IG14QiA9IG1heDMobWF4MyhkLmIsIGUuYiwgZi5iKSwgYi5iLCBoLmIpOwoKICAgIGZsb2F0IG14UjIgPSBtYXgzKG1heDMobXhSLCBhLnIsIGMuciksIGcuciwgaS5yKTsKICAgIGZsb2F0IG14RzIgPSBtYXgzKG1heDMobXhHLCBhLmcsIGMuZyksIGcuZywgaS5nKTsKICAgIGZsb2F0IG14QjIgPSBtYXgzKG1heDMobXhCLCBhLmIsIGMuYiksIGcuYiwgaS5iKTsKCiAgICBteFIgPSBteFIgKyBteFIyOwogICAgbXhHID0gbXhHICsgbXhHMjsKICAgIG14QiA9IG14QiArIG14QjI7CgogICAgZmxvYXQgcmNwTVIgPSByY3AobXhSKTsKICAgIGZsb2F0IHJjcE1HID0gcmNwKG14Ryk7CiAgICBmbG9hdCByY3BNQiA9IHJjcChteEIpOwoKICAgIGZsb2F0IGFtcFIgPSBzYXR1cmF0ZShtaW4obW5SLCAyIC0gbXhSKSAqIHJjcE1SKTsKICAgIGZsb2F0IGFtcEcgPSBzYXR1cmF0ZShtaW4obW5HLCAyIC0gbXhHKSAqIHJjcE1HKTsKICAgIGZsb2F0IGFtcEIgPSBzYXR1cmF0ZShtaW4obW5CLCAyIC0gbXhCKSAqIHJjcE1CKTsKCiAgICBhbXBSID0gc3FydChhbXBSKTsKICAgIGFtcEcgPSBzcXJ0KGFtcEcpOwogICAgYW1wQiA9IHNxcnQoYW1wQik7CgogICAgZmxvYXQgcGVhayA9IC1yY3AobWl4KDgsIDUsIHN0cmVuZ3RoKSk7CgogICAgZmxvYXQgd1IgPSBhbXBSICogcGVhazsKICAgIGZsb2F0IHdHID0gYW1wRyAqIHBlYWs7CiAgICBmbG9hdCB3QiA9IGFtcEIgKiBwZWFrOwoKICAgIGZsb2F0IHJjcFdlaWdodFIgPSByY3AoMSArIDQgKiB3Uik7CiAgICBmbG9hdCByY3BXZWlnaHRHID0gcmNwKDEgKyA0ICogd0cpOwogICAgZmxvYXQgcmNwV2VpZ2h0QiA9IHJjcCgxICsgNCAqIHdCKTsKCiAgICByZXR1cm4gZmxvYXQzKAogICAgICAgIHNhdHVyYXRlKChiLnIgKiB3UiArIGQuciAqIHdSICsgZi5yICogd1IgKyBoLnIgKiB3UiArIGUucikgKiByY3BXZWlnaHRSKSwKICAgICAgICBzYXR1cmF0ZSgoYi5nICogd0cgKyBkLmcgKiB3RyArIGYuZyAqIHdHICsgaC5nICogd0cgKyBlLmcpICogcmNwV2VpZ2h0RyksCiAgICAgICAgc2F0dXJhdGUoKGIuYiAqIHdCICsgZC5iICogd0IgKyBmLmIgKiB3QiArIGguYiAqIHdCICsgZS5iKSAqIHJjcFdlaWdodEIpKTsKfQoKCmZsb2F0NCBtYWluKGZsb2F0MiB4eSkgewoKICAgIGZsb2F0NCBvcmlnaW5hbENvbG9yID0gaUNodW5rLmV2YWwoeHkpOwogICAgaWYgKG9yaWdpbmFsQ29sb3IuYSA8IDEpIHsKICAgICAgICByZXR1cm4gaUNodW5rLmV2YWwoeHkpOwogICAgfQoKICAgIGZsb2F0IGludGVuc2l0eSA9IGlBcmdzWzBdOwogICAgZmxvYXQgc3RyZW5ndGggPSAwOwogICAgZmxvYXQzIGNvbG9yOwoKICAgIGlmIChpbnRlbnNpdHkgPCBWX01JTiArIEVQU0lPTikgewogICAgICAgIHN0cmVuZ3RoID0gMC4xMDsKICAgICAgICBjb2xvciA9IFJHWDMoeHksIHN0cmVuZ3RoKTsKCiAgICB9IGVsc2UgaWYgKGludGVuc2l0eSA+IFZfTE9XIC0gRVBTSU9OICYmIGludGVuc2l0eSA8IFZfTE9XICsgRVBTSU9OKSB7CiAgICAgICAgc3RyZW5ndGggPSAwLjMzOwogICAgICAgIGNvbG9yID0gUkdYMyh4eSwgc3RyZW5ndGgpOwoKICAgIH0gZWxzZSBpZiAoaW50ZW5zaXR5ID4gVl9NRUQgLSBFUFNJT04gJiYgaW50ZW5zaXR5IDwgVl9NRUQgKyBFUFNJT04pIHsKICAgICAgICBzdHJlbmd0aCA9IDAuNTsKICAgICAgICBjb2xvciA9IFJHWDMoeHksIHN0cmVuZ3RoKTsKCiAgICB9IGVsc2UgaWYgKGludGVuc2l0eSA+IFZfSElHSCAtIEVQU0lPTiAmJiBpbnRlbnNpdHkgPCBWX0hJR0ggKyBFUFNJT04pIHsKICAgICAgICBzdHJlbmd0aCA9IDAuOTk7CiAgICAgICAgY29sb3IgPSBSR1gzKHh5LCBzdHJlbmd0aCk7CgogICAgfSBlbHNlIGlmIChpbnRlbnNpdHkgPiBWX01BWCAtIEVQU0lPTikgewogICAgICAgIHN0cmVuZ3RoID0gMTsKICAgICAgICBjb2xvciA9IFJHWDIoeHkpLnJnYjsKICAgIH0KCiAgICByZXR1cm4gZmxvYXQ0KGNvbG9yLCBvcmlnaW5hbENvbG9yLmEpOwp9) -opera-args(0.50 calc(env(-opera-gx-accent-color-r)/255) calc(env(-opera-gx-accent-color-g)/255) calc(env(-opera-gx-accent-color-b)/255)));
-      }
 
-  </style>
-  <link href="https://straw.page/min/?g=els&amp;n=7762" rel="stylesheet">
-  <style>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6T's Crib</title>
+    <link rel="icon" type="image/x-icon" href="6TIcon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Karla:400,900|PT+Sans+Narrow|Yantramanav:400,900|Roboto:900,400|Bangers|Krona+One|Nunito:400,900|Frank+Ruhl+Libre:400,900|Oswald:400,900|Source+Serif+Pro|Work+Sans:400,900|Open+Sans|Raleway|Lato|Passion+One|Lateef|Crimson+Text|Baloo+Paaji+2|Jost|Oswald|Montserrat|Lexend+Deca|Bungee+Shade|Rubik|Inter:400,900|Bebas+Neue|Syncopate:400,700|VT323:400,900|Poppins:400,900|Fredoka+One:400,900|Staatliches:400,900|Redacted+Script:400,900|Rubik+Pixels:400,900|Cute+Font:400,900|Kosugi+Maru:400,900|Darumadrop+One:400,900|Kaisei+Decol:400,900|Playfair+Display:400,900|Rubik+Doodle+Shadow:400,900|Shadows+Into+Light:400,900|M+PLUS+1:400,900|Zeyada:400,900|Rock+Salt:400,900|Leckerli+One:400,900|Space+Mono:400,900|Finger+Paint:400,900" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link href="https://straw.page/min/?g=els&amp;n=9788" rel="stylesheet">
+    <style>
       * {
         outline: 0;
         margin: 0;
@@ -104,56 +99,6 @@
         cursor: pointer
       }
 
-      .branding {
-        position: fixed;
-        bottom: 30px;
-        right: 30px;
-        display: flex;
-        align-items: center;
-        filter: drop-shadow(0 1px 5px rgba(0, 0, 0, .4));
-        background: #df001d;
-        z-index: 9999999999999999;
-        transition: all 0.3s ease;
-        transform: none
-      }
-
-      .branding img {
-        height: 40px;
-        width: 40px;
-        margin-bottom: 0;
-        padding: 2px
-      }
-
-      .brandingContent {
-        display: none
-      }
-
-      .brandingContent p {
-        margin: 0;
-        font-family: 'Yantramanav';
-        color: #fff;
-        font-size: 16px;
-        padding: 0 8px
-      }
-
-      .branding:hover {
-        transform: scale(1.1);
-        cursor: pointer
-      }
-
-      @media(min-width: 5px) {
-        .brandingContent {
-          display: block !important
-        }
-      }
-
-      .inst {
-        --scaler: 1.2
-      }
-
-      .inst.fb {
-        --scaler: 1.15
-      }
 
       .inst .element[data-type=text] .el_content,
       .inst .element[data-type=icon] .el_content,
@@ -195,7 +140,7 @@
         pointer-events: all
       }
 
-      /*        GIMMICKS        */
+      /*	GIMMICKS	*/
       .element[data-type=gimmick-canvas] {
         border: 0.15em solid var(--co);
         --co: #df001d;
@@ -604,37 +549,307 @@
         cursor: pointer
       }
 
-  </style>
-</head>
-<body>
-  <div class="first" style="--g: 2.34375; --b: #8553c6;">
-    <div class="content" style="height: 1057px;">
-      <div class="element" style="--ts: 1.2; --f: Namecat; --co: #eee2ee; --x: 0.0395833; --y: 0.426667; --w: 16; --h: 1; --r: 0; --s: 1;" data-fun-markoui="normal" data-fun-text="Welcome to my website!" data-uid="gkfxxpcmnt" data-type="text">
-        <div class="el_content">
-          <p>Welcome to my website!</p>
+    </style>
+  </head>
+
+  <body>
+    <div class="first" style="--g: 2.34375; --b: #8553c6;">
+      <div class="content">
+        <div class="element" style="--ts: 1.2; --f: Namecat; --co: #eee2ee; --x: 0.0395833; --y: 0.426667; --w: 16; --h: 1; --r: 0; --s: 1;" data-fun-markoui="normal" data-fun-text="Welcome to my website!" data-uid="gkfxxpcmnt" data-type="text">
+          <div class="el_content">
+            <p>Welcome to my website!</p>
+          </div>
+        </div><a href="https://steamcommunity.com/id/syxty6t" target="_blank">
+          <div class="element" style="--ts: 1.3; --h: 1.6; --f: Namecat; --x: 3.01313; --y: 15.2931; --w: 10; --r: 0; --s: 1; --bc: #ffffff; --co: #000000;" data-uid="yjmyasevdj" data-link="https://steamcommunity.com/id/syxty6t" data-type="button"><button><span>Steam</span></button></div>
+        </a><a href="https://discord.com/invite/sPyg9FQ9EK" target="_blank">
+          <div class="element" style="--ts: 1.3; --h: 1.6; --f: Namecat; --x: 3.02646; --y: 13.4133; --w: 10; --r: 0; --s: 1; --bc: #ffffff; --co: #000000;" data-uid="bwbyxjfhmd" data-link="https://discord.com/invite/sPyg9FQ9EK" data-type="button"><button><span>Discord</span></button></div>
+        </a><a href="https://github.com/syxty-web" target="_blank">
+          <div class="element" style="--ts: 1.3; --h: 1.6; --f: Namecat; --x: 3.01333; --y: 11.5333; --w: 10; --r: 0; --s: 1; --bc: #ffffff; --co: #000000;" data-uid="qlhwearspo" data-link="https://github.com/syxty-web" data-type="button"><button><span>Github</span></button></div>
+        </a>
+        <div class="element" style="--x: 4.74; --y: 0.699792; --w: 6.55; --h: 8.15; --r: 0; --s: 0.6; --c: 0; --boc: #305e91;" data-uid="rxiswwdrgi" data-image="contain" data-type="image"><img src="https://files.strawcdn.com/straw/JaccYlfXGJEqTFivYWXO.png" draggable="false" loading="lazy"></div>
+        <div class="element" style="--ts: 5.8; --x: 0.03916666666666667; --y: 7.079166666666667; --w: 16; --h: 2; --r: 0; --s: 1; --co: #eee2ee; --f: Bebas Neue; --ta: center;" data-uid="ziqycoeiyp" data-type="text">
+          <div class="el_content">
+            <p><b>S Y X T Y</b></p>
+          </div>
         </div>
-      </div><a href="https://steamcommunity.com/id/syxty6t" target="_blank">
-      <div class="element" style="--ts: 1.3; --h: 1.6; --f: Namecat; --x: 3.01313; --y: 15.2931; --w: 10; --r: 0; --s: 1; --bc: #ffffff; --co: #000000;" data-uid="yjmyasevdj" data-link="https://steamcommunity.com/id/syxty6t" data-type="button">
-        <button><span>Steam</span></button>
-      </div></a> <a href="https://discord.com/invite/sPyg9FQ9EK" target="_blank">
-      <div class="element" style="--ts: 1.3; --h: 1.6; --f: Namecat; --x: 3.02646; --y: 13.4133; --w: 10; --r: 0; --s: 1; --bc: #ffffff; --co: #000000;" data-uid="bwbyxjfhmd" data-link="https://discord.com/invite/sPyg9FQ9EK" data-type="button">
-        <button><span>Discord</span></button>
-      </div></a> <a href="https://github.com/syxty-web" target="_blank">
-      <div class="element" style="--ts: 1.3; --h: 1.6; --f: Namecat; --x: 3.01333; --y: 11.5333; --w: 10; --r: 0; --s: 1; --bc: #ffffff; --co: #000000;" data-uid="qlhwearspo" data-link="https://github.com/syxty-web" data-type="button">
-        <button><span>Github</span></button>
-      </div></a>
-      <div class="element" style="--x: 4.74; --y: 0.699792; --w: 6.55; --h: 8.15; --r: 0; --s: 0.6; --c: 0; --boc: #305e91;" data-uid="rxiswwdrgi" data-image="contain" data-type="image"><img src="https://files.strawcdn.com/straw/JaccYlfXGJEqTFivYWXO.png" draggable="false" loading="lazy" alt="JaccYlfXGJEqTFivYWXO"></div>
-      <div class="element" style="--ts: 5.8; --x: 0.03916666666666667; --y: 7.079166666666667; --w: 16; --h: 2; --r: 0; --s: 1; --co: #eee2ee; --f: Bebas Neue; --ta: center;" data-uid="ziqycoeiyp" data-type="text">
-        <div class="el_content">
-          <p><b>S Y X T Y</b></p>
-        </div>
-      </div>
-      <div class="element" style="--ts: 1.5; --f: Bebas Neue; --co: #eee2ee; --x: 0.03916666666666667; --y: 17.4; --w: 16; --h: 1; --r: 0; --s: 0.95; --ta: center;" data-uid="qvnuadmqcf" data-type="text">
-        <div class="el_content">
-          <p>Hey, you can call me 6T, pronounced like the number 60. I am a 14-year-old boy from Canada who speaks French/English and likes computers and anything techie in general. I made this, so people could reach to me if they had any questions/problems on their computers/phone, I am always here to help. If you are interested into reaching out to me, feel free to join my Discord in my social buttons above!</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</body>
+        <div class="element" style="--ts: 1.5; --f: Bebas Neue; --co: #eee2ee; --x: 0.03916666666666667; --y: 17.4; --w: 16; --h: 1; --r: 0; --s: 0.95; --ta: center;" data-uid="qvnuadmqcf" data-type="text">
+          <div class="el_content">
+            <p>Hey, you can call me 6T, pronounced like the number 60. I am a 14-year-old boy from Canada who speaks French/English and likes computers and anything techie in general. I made this, so people could reach to me if they had any questions/problems on their computers/phone, I am always here to help. If you are interested into reaching out to me, feel free to join my Discord in my social buttons above!</p>
+          </div>
+          <script>
+            const debounce = (func, wait) => {
+              let timeout;
+              return function executedFunction(...args) {
+                const later = () => {
+                  clearTimeout(timeout);
+                  func(...args);
+                };
+                clearTimeout(timeout);
+                timeout = setTimeout(later, wait);
+              };
+            };
+
+            function formatPaint() {
+              var maxWindow = parseFloat($(".first").css("--mw"));
+              var currentWindow = $(window).width();
+              if (currentWindow < maxWindow) {
+                var paintRatio = currentWindow / maxWindow;
+                $(".first svg,#drawing svg").each(function() {
+                  var getOldS = parseFloat(1 - paintRatio);
+                  $(this).css("--ns", getOldS);
+                });
+              } else {
+                $(".first svg,#drawing svg").css("--ns", 0);
+              }
+            }
+
+            function makeGrid() {
+              var getSize = parseFloat($(".content").outerWidth()) / 16 / 16;
+              $(".first").css("--g", getSize);
+              gridSize = parseFloat($(".grid").css("--g")) * 16;
+              gridDown = false;
+              gridSelected = false;
+              formatPaint();
+            }
+            makeGrid();
+            $(window).on("resize", function() {
+              makeGrid();
+            });
+            $('.spotSearch input').keyup(debounce(function() {
+              var getVal = $('.spotSearch input').val();
+              $.ajax({
+                url: "https://straw.page/power/spotify/search",
+                method: "GET",
+                data: {
+                  q: getVal
+                },
+                success: function(data) {
+                  $(".spotResults").empty();
+                  for (var i = 0; i < data.length; i++) {
+                    $(".spotResults").append(`<div class="spotItem"><img src="${data[i].album_image_url}"><div class="spotMeta" data-sound="${data[i].preview}"><h5>${data[i].name}</h5><p><i class="fab fa-spotify"></i>${data[i].artist_list}</p></div></div>`);
+                  }
+                }
+              });
+            }, 500));
+
+            function calculateEditorHeight() {
+              var getScroll = $(document).scrollTop();
+              $(".content").css("height", "");
+              var getHeight = $(".content")[0].scrollHeight;
+              var getWindowHeight = $(window).outerHeight(); /*$(".content").css("min-height",getHeight+((getWindowHeight/100)*75));*/
+              $(".content").css("height", getHeight + 80);
+              $(document).scrollTop(getScroll);
+            }
+            calculateEditorHeight();
+            $(window).on('load', function() {
+              calculateEditorHeight();
+              if (typeof umami !== 'undefined') {
+                ok = umami;
+                if (typeof ok.track == "undefined") {
+                  ok.track = function() {}
+                }
+              }
+            });
+            $(document).on("mousemove touchmove", function(e) {
+              var currentY = e.originalEvent.touches ? e.originalEvent.touches[0].pageY : e.pageY;
+              var currentX = e.originalEvent.touches ? e.originalEvent.touches[0].pageX : e.pageX;
+              $(".eyeball span").each(function() {
+                var standardR = parseFloat($(this).closest(".element").css("--r"));
+                var eye = $(this);
+                var eyeX = (eye.offset().left) + (eye.width() / 2);
+                var eyeY = (eye.offset().top) + (eye.height() / 2);
+                rad = Math.atan2(currentX - eyeX, currentY - eyeY);
+                rot = (rad * (180 / Math.PI) * -1) + 180;
+                rot -= standardR;
+                eye.css({
+                  '-webkit-transform': 'rotate(' + rot + 'deg)',
+                  '-moz-transform': 'rotate(' + rot + 'deg)',
+                  '-ms-transform': 'rotate(' + rot + 'deg)',
+                  'transform': 'rotate(' + rot + 'deg)'
+                });
+              });
+            });
+            if ($(window).width() < 5) {
+              $(".branding").mouseover(function() {
+                $(".brandingContent").show(150)
+              }).mouseleave(function() {
+                $(".brandingContent").hide(150)
+              });
+            }
+            var findr = ['Instagram', 'Snapchat', 'FB'];
+
+            function containsCheck(target, pattern) {
+              var value = 0;
+              pattern.forEach(function(word) {
+                value = value + target.includes(word);
+              });
+              return (value === 1)
+            }
+            if (containsCheck(navigator.userAgent, findr)) {
+              $(".first").addClass("inst");
+            }
+
+          </script>
+          <script>
+            var audioElements = {};
+            var spotEls = {};
+            $(document).on("click", ".element[data-sound]", function() {
+              if ($(this).data("type") == "spotify") {
+                $(this).toggleClass("playing");
+                if ($(this).hasClass("playing")) {
+                  $(this).find(".imgWrap i").attr("class", "fas fa-pause");
+                } else {
+                  $(this).find(".imgWrap i").attr("class", "fas fa-play");
+                }
+              }
+              var soundID = $(this).data("sound");
+              if (!audioElements[soundID]) {
+                audioElements[soundID] = new Audio(soundID);
+              }
+              var audio = audioElements[soundID];
+              if (audio.paused) {
+                audio.play();
+              } else {
+                audio.pause();
+              }
+            });
+            if ($(".element[data-type=blog").length > 0) {
+              $.ajax({
+                type: "GET",
+                url: "blog/fetch/posts",
+                success: function(data) {
+                  if (data.length > 0) {
+                    for (item of data) {
+                      switch (item['type']) {
+                        case "post":
+                          $(".element[data-type=blog] .innerBlog").append(`<div class="post"><a href="${item.url}"><div class="innerPost">${item.content}<div class="meta"><p>~ ${item.published}</p></div></div></a></div>`);
+                          break;
+                      }
+                    }
+                  }
+                }
+              });
+            }
+
+            function isTouchDevice() {
+              return (('ontouchstart' in window) || (navigator.maxTouchPoints > 0) || (navigator.msMaxTouchPoints > 0));
+            }
+
+            function startMajorityVoteTalk() {
+              $(".activeTalk").each(function() {
+                var talkCtx = this;
+                var getText = $(this).data("talk").trim();
+                $(this).text("");
+                $(this).closest(".element").addClass("disableTmp");
+                for (var i = 0; i < getText.length; i++) {
+                  (function(index) {
+                    setTimeout(function() {
+                      $(talkCtx).append(getText[index]);
+                      if (index === getText.length - 1) {
+                        $(talkCtx).closest(".element").removeClass("disableTmp");
+                      }
+                    }, 20 * index);
+                  })(i);
+                }
+              });
+            }
+            $(".element[data-type=majorityvote").each(function() {
+              $(this).find(".innerTalking p").eq(0).addClass("activeTalk");
+              startMajorityVoteTalk();
+            });
+            if ($(".element[data-type=friends").length > 0) {
+              $.ajax({
+                url: "/get/following",
+                method: "GET",
+                success: function(data) {
+                  $(".innerFriendsList").empty();
+                  $(".innerFriendsList").each(function() {
+                    for (var i = 0; i < data.sites.length; i++) {
+                      $(this).append(`<div class="followingDon" data-site="${data.sites[i].site}"><a href="https://${data.sites[i].site}.straw.page"><div class="innerFollowingDon"><img src="${data.sites[i].pic}" />${data.sites[i].site.length > 7 ? '<div class="marquee" data-fun-text="'+data.sites[i].site+'"></div>' : '<p>'+data.sites[i].site+'</p>'}</div></a></div>`);
+                    }
+                  });
+                }
+              });
+            }
+            $(document).on("click", ".innerTalking", function() {
+              var ctxTalk = $(this).find(".activeTalk");
+              var ctxScene = $(this).closest(".scene");
+              if ($(ctxTalk).next("p").length > 0) {
+                $(ctxTalk).empty();
+                $(ctxTalk).removeClass("activeTalk");
+                $(ctxTalk).next("p").addClass("activeTalk");
+                startMajorityVoteTalk();
+              } else {
+                if ($(ctxScene).next(".scene").length > 0) {
+                  $(ctxScene).next(".scene").addClass("active");
+                  $(ctxScene).find(".activeTalk").removeClass("activeTalk");
+                  $(ctxScene).removeClass("active");
+                  $(ctxScene).next(".scene").find(".innerTalking p").eq(0).addClass("activeTalk");
+                  startMajorityVoteTalk();
+                } else {
+                  $(".activeTalk").removeClass("activeTalk");
+                  $(this).closest(".element").find(".active").removeClass("active");
+                  $(this).closest(".element").find(".scene").eq(0).addClass("active");
+                  $(this).closest(".element").find(".scene.active .innerTalking p").eq(0).addClass("activeTalk");
+                  startMajorityVoteTalk();
+                }
+              }
+            });
+            var amaCtx;
+            $(document).on("click", ".spotItem", function() {
+              $(amaCtx).find("img").remove();
+              $(amaCtx).find(".askExtra").append(`<img src="${$(this).find("img").attr("src")}">`);
+              $(amaCtx).data("song", $(this).find("h5").text());
+              $(amaCtx).data("artist", $(this).find("p").text());
+              $(amaCtx).data("sound", $(this).find(".spotMeta").attr("data-sound"));
+              $(".spotSearch").removeClass("bringUp");
+            });
+            $(document).on("click", ".askExtra", function() {
+              amaCtx = $(this).closest(".element");
+              $(".spotSearch").addClass("bringUp");
+            });
+            $(document).on("click", ".spotSearch .closer", function() {
+              $(".spotSearch").removeClass("bringUp");
+            });
+            $(document).on("click", ".element[data-scrollto]", function(e) {
+              e.stopImmediatePropagation();
+              var getScrollID = $(this).data("scrollto").trim();
+              $('html, body').animate({
+                scrollTop: $(`.element[data-uid=${getScrollID}]`).offset().top
+              }, 400);
+            });
+
+            function convertRemToPixels(rem) {
+              return rem * parseFloat(getComputedStyle($(".content")[0]).fontSize);
+            }
+
+            function calculateH(desiredHeight) {
+              const remInPixels = convertRemToPixels(1);
+              const multiplier = 2.34375;
+              const baseHeight = remInPixels * multiplier;
+              const h = desiredHeight / baseHeight;
+              return h;
+            }
+            $(window).on("load", function() {
+              $(".element[data-type=blogcontent]").each(function() {
+                var getBound = $(this)[0].getBoundingClientRect();
+                var oldH = parseFloat($(this).css("--h"));
+                var oldY = parseFloat($(this).css("--y"));
+                var diffH = calculateH(getBound.height) - oldH;
+                $(".element").not(this).each(function() {
+                  var ctxBound = $(this)[0].getBoundingClientRect();
+                  if (ctxBound.left >= getBound.left && ctxBound.right <= getBound.right) {
+                    var ctxY = parseFloat($(this).css("--y"));
+                    if (ctxY >= oldY + oldH) {
+                      $(this).css("--y", ctxY + diffH);
+                    }
+                  }
+                });
+              });
+              calculateEditorHeight();
+            });
+
+          </script>
+  </body>
+
 </html>

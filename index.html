@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>S Y X T Y's Crib</title>
+	<link rel="icon" type="image/x-icon" href="7d00cb58b7eeb34d7112a99c613cea13.ico">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Karla:400,900|PT+Sans+Narrow|Yantramanav:400,900|Roboto:900,400|Bangers|Krona+One|Nunito:400,900|Frank+Ruhl+Libre:400,900|Oswald:400,900|Source+Serif+Pro|Work+Sans:400,900|Open+Sans|Raleway|Lato|Passion+One|Lateef|Crimson+Text|Baloo+Paaji+2|Jost|Oswald|Montserrat|Lexend+Deca|Bungee+Shade|Rubik|Inter:400,900|Bebas+Neue|Syncopate:400,700|VT323:400,900|Poppins:400,900|Fredoka+One:400,900|Staatliches:400,900|Redacted+Script:400,900|Rubik+Pixels:400,900|Cute+Font:400,900|Kosugi+Maru:400,900|Darumadrop+One:400,900|Kaisei+Decol:400,900|Playfair+Display:400,900|Rubik+Doodle+Shadow:400,900|Shadows+Into+Light:400,900|M+PLUS+1:400,900|Zeyada:400,900|Rock+Salt:400,900|Leckerli+One:400,900|Space+Mono:400,900|Finger+Paint:400,900" rel="stylesheet">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<link href="https://straw.page/min/?g=els&amp;n=9788" rel="stylesheet">
+	<style>
+	* {
+		outline: 0;
+		margin: 0;
+		-moz-box-sizing: border-box;
+		-webkit-box-sizing: border-box;
+		box-sizing: border-box;
+		overscroll-behavior: none;
+		-webkit-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+	}
+	
+	html {
+		-webkit-text-size-adjust: 100%;
+	}
+	
+	a,
+	a:link,
+	a:visited,
+	.a:hover,
+	.a:focus,
+	a:active {
+		color: inherit;
+		text-decoration: none;
+	}
+	
+	body {
+		overflow-x: hidden
+	}
+	
+	.first {
+		font-family: 'Yantramanav';
+		background: var(--b);
+		--b: #fff;
+		--p: #df001d;
+		--g: 32px;
+		--gs: 2.73438em;
+		--mw: 600;
+		--extra: 1;
+		background-size: cover;
+		background-position: center;
+		background-attachment: scroll;
+		overflow-x: hidden;
+		overflow-y: hidden
+	}
+	
+	.content {
+		margin: 0 auto;
+		/* min-height: calc(200vh + calc(1rem * calc(var(--extra) * var(--g)))); */
+		width: 100%;
+		max-width: calc(1px * var(--mw));
+		position: relative;
+		font-size: min(16px, 16 * (100vw / var(--mw)));
+		min-height: 100vh;
+	}
+	
+	.element:hover {
+		cursor: auto
+	}
+	
+	.element[data-type=text] * {
+		-webkit-user-drag: auto;
+		-khtml-user-drag: auto;
+		-moz-user-drag: auto;
+		-o-user-drag: auto;
+		user-drag: auto;
+		-khtml-user-select: auto;
+		-o-user-select: auto;
+		-moz-user-select: auto;
+		-webkit-user-select: auto;
+		user-select: auto;
+	}
+	
+	.element {
+		transition: transform 0.3s ease
+	}
+	
+	.content a .element:hover,
+	.element[data-scrollto]:hover {
+		transform: rotate(calc(1deg*var(--r))) scale(calc(var(--s) * 1.05));
+		cursor: pointer
+	}
+	
+	.content a .element:hover button {
+		cursor: pointer
+	}
+	
+	.inst .element[data-type=text] .el_content,
+	.inst .element[data-type=icon] .el_content,
+	.inst .element[data-type=button] button {
+		font-size: calc(1em * calc(var(--ts) / var(--scaler)));
+	}
+	
+	.element[data-type=embed] iframe {
+		pointer-events: all
+	}
+	
+	.element[data-type=image]:not([data-link]):not([data-scrollto]),
+	.element[data-type=icon]:not([data-link]):not([data-scrollto]),
+	.element[data-type=shape]:not([data-link]):not([data-scrollto]) {
+		pointer-events: none
+	}
+	
+	.element[data-type=text]:not([data-link]):not([data-scrollable]):not([data-scrollto]) {
+		pointer-events: none
+	}
+	
+	.element[data-type=text]:not([data-link]):not([data-scrollto]) * {
+		pointer-events: all
+	}
+	
+	.element[data-type=icon][data-link] {
+		pointer-events: none
+	}
+	
+	.element[data-type=icon][data-link] i {
+		pointer-events: all
+	}
+	
+	.element[data-type=paint] {
+		pointer-events: none
+	}
+	
+	.element[data-type=paint] g {
+		pointer-events: all
+	}
+	/*	GIMMICKS	*/
+	
+	.element[data-type=gimmick-canvas] {
+		border: 0.15em solid var(--co);
+		--co: #df001d;
+		--ts: 1;
+		border-radius: 5px;
+		transform: rotate(calc(1deg*var(--r)))
+	}
+	
+	.element[data-type=gimmick-canvas] .innerCanvas {
+		height: 100%;
+		width: 100%;
+		display: flex;
+		flex-direction: column
+	}
+	
+	.element[data-type=gimmick-canvas] .toolbox {
+		margin: 0 0 0 auto;
+		background: #fff;
+		padding: 0.4em 0.6em;
+		color: var(--co);
+		display: inline-flex;
+		font-size: calc(1em * var(--ts));
+		position: absolute;
+		top: -0em;
+		left: 50%;
+		transform: translate(-50%, -100%);
+		border: 0.15em solid var(--co);
+		border-radius: calc(5px / 2);
+		align-items: center;
+		max-width: 100%
+	}
+	
+	.element[data-type=gimmick-canvas] .toolbox i {
+		padding: 0 0.4em;
+		font-size: 1.1em;
+	}
+	
+	.element[data-type=gimmick-canvas] .picasso {
+		background: #fff;
+		flex: 1;
+		border-radius: calc(5px / 2);
+		overflow: hidden;
+		position: relative
+	}
+	
+	.element[data-type=gimmick-canvas] .picasso canvas {
+		height: 100%;
+		width: 100%
+	}
+	
+	.element[data-type=gimmick-canvas] .sendPicasso {
+		padding: 0em;
+	}
+	
+	.element[data-type=gimmick-canvas] .sendPicasso button {
+		-webkit-appearance: none;
+		appearance: none;
+		background: #fff;
+		color: var(--co);
+		text-align: center;
+		border: 0;
+		border-top: 0.15em solid var(--co);
+		width: 100%;
+		padding: 0.5em 0.2em;
+		font-family: 'Yantramanav';
+		font-size: 1.1em;
+		border-bottom-left-radius: calc(5px / 2);
+		border-bottom-right-radius: calc(5px / 2);
+		transition: all 0.3s ease
+	}
+	
+	.element[data-type=gimmick-canvas] .sendPicasso button:hover {
+		background: var(--co);
+		color: #fff;
+		cursor: pointer
+	}
+	
+	.element[data-type=gimmick-ama] .askerSend button:hover {
+		background: var(--co);
+		color: #fff;
+		cursor: pointer
+	}
+	
+	.element[data-type=gimmick-ama] .askExtra {
+		position: relative;
+		transition: all 0.3s ease
+	}
+	
+	.element[data-type=gimmick-ama] .askExtra img {
+		height: 1.875em;
+		width: 1.875em;
+		position: absolute;
+		left: calc(50% - 4px);
+		top: 50%;
+		transform: translate(-50%, -50%);
+		object-fit: cover;
+		object-position: center
+	}
+	
+	.element[data-type=gimmick-ama] .askExtra:hover {
+		opacity: 0.5;
+		cursor: pointer
+	}
+	
+	.element[data-type=gimmick-canvas] .canvCol {
+		height: 1.1em;
+		width: 1.1em;
+		border-radius: 50%;
+		margin: 0 0.4em;
+		background: conic-gradient(from 0deg at 50% 50%, rgba(255, 0, 0, 1) 0%, rgba(255, 154, 0, 1) 10%, rgba(208, 222, 33, 1) 20%, rgba(79, 220, 74, 1) 30%, rgba(63, 218, 216, 1) 40%, rgba(47, 201, 226, 1) 50%, rgba(28, 127, 238, 1) 60%, rgba(95, 21, 242, 1) 70%, rgba(186, 12, 248, 1) 80%, rgba(251, 7, 217, 1) 90%, rgba(255, 0, 0, 1) 100%);
+	}
+	
+	.element[data-type=gimmick-canvas] [type=color] {
+		visibility: hidden;
+		position: absolute;
+	}
+	
+	.canvSizing {
+		display: flex;
+		align-items: center
+	}
+	
+	.element[data-type=gimmick-canvas] [type=range] {
+		border: 0;
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		appearance: none;
+		height: 5px;
+		width: 3em;
+		background: var(--co);
+		border-radius: 40px;
+		border: 1px solid var(--co);
+		background: 0;
+		margin: 0 0.5rem
+	}
+	
+	.element[data-type=gimmick-canvas] [type=range]::-webkit-slider-thumb {
+		-webkit-appearance: none;
+		appearance: none;
+		background: var(--co);
+		height: 15px;
+		width: 15px;
+		border: 2px solid var(--co);
+		border-radius: 40px
+	}
+	
+	.element[data-type=gimmick-canvas].doneArt,
+	.element[data-type=gimmick-ama].doneArt {
+		pointer-events: none;
+	}
+	
+	.jfr .element,
+	.jfr .element * {
+		pointer-events: all !important
+	}
+	
+	@media(max-width: 385px) {
+		.element[data-type=gimmick-canvas] [type=range]::-webkit-slider-thumb {
+			height: 12px;
+			width: 12px;
+		}
+	}
+	
+	.element[data-type=image] img {
+		width: calc(100% * var(--s));
+		height: calc(100% * var(--s));
+		transform: scale(calc(1 / var(--s))) translateZ(0);
+	}
+	
+	@-moz-document url-prefix() {
+		.element[data-type=image] img {
+			min-height: calc(100% * var(--s));
+			min-width: calc(100% * var(--s));
+		}
+	}
+	
+	.element[data-type=majorityvote] .innerTalking p:not(.activeTalk) {
+		display: none
+	}
+	
+	.element[data-type=majorityvote] .innerTalking:hover {
+		cursor: pointer
+	}
+	
+	.element.disableTmp {
+		pointer-events: none
+	}
+	
+	.completionCasso {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		z-index: 9999;
+		background: var(--co);
+		align-items: center;
+		justify-content: center;
+		opacity: 0;
+		pointer-events: none;
+		display: flex;
+		transition: opacity 0.3s ease
+	}
+	
+	.completionCasso button {
+		-webkit-appearance: none;
+		appearance: none;
+		background: #fff;
+		color: var(--co);
+		border: 1px solid #fff;
+		font-family: 'Yantramanav';
+		font-size: 1em;
+		padding: 0.3em 0.8em;
+		transition: all 0.3s ease
+	}
+	
+	.completionCasso button:hover {
+		transform: scale(1.1);
+		cursor: pointer
+	}
+	
+	.element[data-type=gimmick-canvas].doneArt .completionCasso {
+		pointer-events: all;
+		opacity: 1;
+	}
+	
+	.element[data-sound] {
+		pointer-events: all !important
+	}
+	
+	.element[data-sound]:hover {
+		cursor: pointer
+	}
+	
+	.element[data-type=spotify]:hover .imgWrap i {
+		transform: translate(-50%, -50%) scale(1.1)
+	}
+	
+	.cursorMode .cursorReal {
+		background-image: var(--cu);
+		height: 32px;
+		width: 32px;
+		background-size: contain;
+		background-repeat: no-repeat;
+		background-position: center;
+		position: fixed;
+		top: 100px;
+		left: 100px;
+		z-index: 999999999999999999999;
+		pointer-events: none;
+	}
+	
+	.cursorMode,
+	.cursorMode * {
+		cursor: none !important
+	}
+	
+	.spotSearch {
+		background: #18181b;
+		max-height: 270px;
+		position: fixed;
+		bottom: -120vh;
+		left: 0;
+		right: 0;
+		max-width: 420px;
+		margin: 0 auto;
+		border-top-left-radius: 20px;
+		border-top-right-radius: 20px;
+		padding: 15px;
+		height: 100%;
+		opacity: 0;
+		transition: bottom 0.3s ease
+	}
+	
+	.spotSearch.bringUp {
+		bottom: 0;
+		opacity: 1;
+	}
+	
+	.spotSearch .closer {
+		background: #000;
+		position: absolute;
+		top: 0;
+		left: 50%;
+		transform: translate(-50%, -100%);
+		color: #fff;
+		height: 30px;
+		width: 40px;
+		border-top-left-radius: 5px;
+		border-top-right-radius: 5px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		transition: all 0.3s ease;
+	}
+	
+	.spotSearch .closer:hover {
+		opacity: 0.8;
+		cursor: pointer
+	}
+	
+	.innerSpotSearch {
+		overflow-y: scroll;
+		height: 100%
+	}
+	
+	.searchWrap {
+		position: sticky;
+		top: 0px;
+		display: grid;
+		grid-template-columns: auto 1fr;
+		grid-gap: 10px;
+		color: #8d8d8f;
+		background: #27272a;
+		border-radius: 40px;
+		overflow: hidden
+	}
+	
+	.searchWrap input {
+		background: #27272a;
+		width: 100%;
+		font-family: 'Yantramanav';
+		padding: 8px 8px;
+		border: 0;
+		font-size: 14px;
+		color: #fff
+	}
+	
+	.searchWrap input::placeholder {
+		color: #8d8d8f
+	}
+	
+	.searchWrap i {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		padding-left: 14px;
+		font-size: 13px;
+	}
+	
+	.spotResults {
+		padding: 20px 0;
+		display: grid;
+		grid-gap: 10px
+	}
+	
+	.spotItem {
+		display: grid;
+		grid-template-columns: auto 1fr auto;
+		grid-gap: 20px;
+		color: #fff;
+		padding: 10px;
+		border-radius: 10px;
+		transition: all 0.3s ease
+	}
+	
+	.spotItem:hover {
+		background: rgba(255, 255, 255, 0.05);
+		cursor: pointer
+	}
+	
+	.spotItem img {
+		height: 30px;
+		width: 30px;
+		object-fit: cover;
+		object-position: center;
+		border-radius: 6px;
+	}
+	
+	.spotMeta {
+		color: #cfcfd3;
+		display: grid;
+		grid-gap: 4px;
+	}
+	
+	.spotMeta h5 {
+		font-size: 13px;
+		color: #fff
+	}
+	
+	.spotMeta p {
+		font-size: 13px;
+	}
+	
+	.spotMeta i {
+		font-size: 12px;
+		padding-right: 4px
+	}
+	
+	.spotActions {
+		display: flex;
+		align-items: center
+	}
+	
+	.spotActions i {
+		padding: 4px;
+		font-size: 13px;
+	}
+	
+	.followingDon {
+		transition: all 0.3s ease
+	}
+	
+	.followingDon:hover {
+		opacity: 0.5;
+		cursor: pointer
+	}
+	</style>
+</head>
+
+<body>
+	<div class="first" style="--g: 2.34375; --b: #8553c6;">
+		<div class="content">
+			<div class="element" style="--ts: 1.2; --f: Namecat; --co: #eee2ee; --x: 0.0395833; --y: 0.426667; --w: 16; --h: 1; --r: 0; --s: 1;" data-fun-markoui="normal" data-fun-text="Welcome to my website!" data-uid="gkfxxpcmnt" data-type="text">
+				<div class="el_content">
+					<p>Welcome to my website!</p>
+				</div>
+			</div>
+			<a href="https://soundcloud.com/60-t/tracks" target="_blank">
+				<div class="element" style="--ts: 1.3; --h: 1.6; --f: Namecat; --x: 3.01313; --y: 15.2931; --w: 10; --r: 0; --s: 1; --bc: #ffffff; --co: #000000;" data-uid="yjmyasevdj" data-link="https://soundcloud.com/60-t/tracks" data-type="button">
+					<button><span>SoundCloud</span></button>
+				</div>
+			</a>
+			<a href="https://discord.com/invite/sPyg9FQ9EK" target="_blank">
+				<div class="element" style="--ts: 1.3; --h: 1.6; --f: Namecat; --x: 3.02646; --y: 13.4133; --w: 10; --r: 0; --s: 1; --bc: #ffffff; --co: #000000;" data-uid="bwbyxjfhmd" data-link="https://discord.com/invite/sPyg9FQ9EK" data-type="button">
+					<button><span>Discord</span></button>
+				</div>
+			</a>
+			<a href="https://github.com/syxty-web" target="_blank">
+				<div class="element" style="--ts: 1.3; --h: 1.6; --f: Namecat; --x: 3.01333; --y: 11.5333; --w: 10; --r: 0; --s: 1; --bc: #ffffff; --co: #000000;" data-uid="qlhwearspo" data-link="https://github.com/syxty-web" data-type="button">
+					<button><span>Github</span></button>
+				</div>
+			</a>
+			<div class="element" style="--x: 4.74; --y: 0.699792; --w: 6.55; --h: 8.15; --r: 0; --s: 0.6; --c: 0; --boc: #305e91;" data-uid="rxiswwdrgi" data-image="contain" data-type="image"><img src="https://i.ibb.co/mbshY84/7d00cb58b7eeb34d7112a99c613cea13.png" draggable="false" loading="lazy"></div>
+			<div class="element" style="--ts: 5.8; --x: 0.03916666666666667; --y: 7.079166666666667; --w: 16; --h: 2; --r: 0; --s: 1; --co: #eee2ee; --f: Bebas Neue; --ta: center;" data-uid="ziqycoeiyp" data-type="text">
+				<div class="el_content">
+					<p><b>S Y X T Y</b></p>
+				</div>
+			</div>
+			<div class="element" style="--ts: 1.5; --f: Bebas Neue; --co: #eee2ee; --x: 0.03916666666666667; --y: 17.4; --w: 16; --h: 1; --r: 0; --s: 0.95; --ta: center;" data-uid="qvnuadmqcf" data-type="text">
+				<div class="el_content">
+					<p>Hey, you can call me S Y X T Y, pronounced like the number 60. I am a 15-year-old boy from Canada who speaks French/English. If you are interested into reaching out to me, feel free to join my Discord server in my social buttons above!</p>
+					<iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1831778673&color=%238553c6&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe></div>
+				<script>
+				const debounce = (func, wait) => {
+					let timeout;
+					return function executedFunction(...args) {
+						const later = () => {
+							clearTimeout(timeout);
+							func(...args);
+						};
+						clearTimeout(timeout);
+						timeout = setTimeout(later, wait);
+					};
+				};
+
+				function formatPaint() {
+					var maxWindow = parseFloat($(".first").css("--mw"));
+					var currentWindow = $(window).width();
+					if(currentWindow < maxWindow) {
+						var paintRatio = currentWindow / maxWindow;
+						$(".first svg,#drawing svg").each(function() {
+							var getOldS = parseFloat(1 - paintRatio);
+							$(this).css("--ns", getOldS);
+						});
+					} else {
+						$(".first svg,#drawing svg").css("--ns", 0);
+					}
+				}
+
+				function makeGrid() {
+					var getSize = parseFloat($(".content").outerWidth()) / 16 / 16;
+					$(".first").css("--g", getSize);
+					gridSize = parseFloat($(".grid").css("--g")) * 16;
+					gridDown = false;
+					gridSelected = false;
+					formatPaint();
+				}
+				makeGrid();
+				$(window).on("resize", function() {
+					makeGrid();
+				});
+				$('.spotSearch input').keyup(debounce(function() {
+					var getVal = $('.spotSearch input').val();
+					$.ajax({
+						url: "https://straw.page/power/spotify/search",
+						method: "GET",
+						data: {
+							q: getVal
+						},
+						success: function(data) {
+							$(".spotResults").empty();
+							for(var i = 0; i < data.length; i++) {
+								$(".spotResults").append(`<div class="spotItem"><img src="${data[i].album_image_url}"><div class="spotMeta" data-sound="${data[i].preview}"><h5>${data[i].name}</h5><p><i class="fab fa-spotify"></i>${data[i].artist_list}</p></div></div>`);
+							}
+						}
+					});
+				}, 500));
+
+				function calculateEditorHeight() {
+					var getScroll = $(document).scrollTop();
+					$(".content").css("height", "");
+					var getHeight = $(".content")[0].scrollHeight;
+					var getWindowHeight = $(window).outerHeight(); /*$(".content").css("min-height",getHeight+((getWindowHeight/100)*75));*/
+					$(".content").css("height", getHeight + 80);
+					$(document).scrollTop(getScroll);
+				}
+				calculateEditorHeight();
+				$(window).on('load', function() {
+					calculateEditorHeight();
+					if(typeof umami !== 'undefined') {
+						ok = umami;
+						if(typeof ok.track == "undefined") {
+							ok.track = function() {}
+						}
+					}
+				});
+				$(document).on("mousemove touchmove", function(e) {
+					var currentY = e.originalEvent.touches ? e.originalEvent.touches[0].pageY : e.pageY;
+					var currentX = e.originalEvent.touches ? e.originalEvent.touches[0].pageX : e.pageX;
+					$(".eyeball span").each(function() {
+						var standardR = parseFloat($(this).closest(".element").css("--r"));
+						var eye = $(this);
+						var eyeX = (eye.offset().left) + (eye.width() / 2);
+						var eyeY = (eye.offset().top) + (eye.height() / 2);
+						rad = Math.atan2(currentX - eyeX, currentY - eyeY);
+						rot = (rad * (180 / Math.PI) * -1) + 180;
+						rot -= standardR;
+						eye.css({
+							'-webkit-transform': 'rotate(' + rot + 'deg)',
+							'-moz-transform': 'rotate(' + rot + 'deg)',
+							'-ms-transform': 'rotate(' + rot + 'deg)',
+							'transform': 'rotate(' + rot + 'deg)'
+						});
+					});
+				});
+				if($(window).width() < 5) {
+					$(".branding").mouseover(function() {
+						$(".brandingContent").show(150)
+					}).mouseleave(function() {
+						$(".brandingContent").hide(150)
+					});
+				}
+				var findr = ['Instagram', 'Snapchat', 'FB'];
+
+				function containsCheck(target, pattern) {
+					var value = 0;
+					pattern.forEach(function(word) {
+						value = value + target.includes(word);
+					});
+					return(value === 1)
+				}
+				if(containsCheck(navigator.userAgent, findr)) {
+					$(".first").addClass("inst");
+				}
+				</script>
+				<script>
+				var audioElements = {};
+				var spotEls = {};
+				$(document).on("click", ".element[data-sound]", function() {
+					if($(this).data("type") == "spotify") {
+						$(this).toggleClass("playing");
+						if($(this).hasClass("playing")) {
+							$(this).find(".imgWrap i").attr("class", "fas fa-pause");
+						} else {
+							$(this).find(".imgWrap i").attr("class", "fas fa-play");
+						}
+					}
+					var soundID = $(this).data("sound");
+					if(!audioElements[soundID]) {
+						audioElements[soundID] = new Audio(soundID);
+					}
+					var audio = audioElements[soundID];
+					if(audio.paused) {
+						audio.play();
+					} else {
+						audio.pause();
+					}
+				});
+				if($(".element[data-type=blog").length > 0) {
+					$.ajax({
+						type: "GET",
+						url: "blog/fetch/posts",
+						success: function(data) {
+							if(data.length > 0) {
+								for(item of data) {
+									switch(item['type']) {
+										case "post":
+											$(".element[data-type=blog] .innerBlog").append(`<div class="post"><a href="${item.url}"><div class="innerPost">${item.content}<div class="meta"><p>~ ${item.published}</p></div></div></a></div>`);
+											break;
+									}
+								}
+							}
+						}
+					});
+				}
+
+				function isTouchDevice() {
+					return(('ontouchstart' in window) || (navigator.maxTouchPoints > 0) || (navigator.msMaxTouchPoints > 0));
+				}
+
+				function startMajorityVoteTalk() {
+					$(".activeTalk").each(function() {
+						var talkCtx = this;
+						var getText = $(this).data("talk").trim();
+						$(this).text("");
+						$(this).closest(".element").addClass("disableTmp");
+						for(var i = 0; i < getText.length; i++) {
+							(function(index) {
+								setTimeout(function() {
+									$(talkCtx).append(getText[index]);
+									if(index === getText.length - 1) {
+										$(talkCtx).closest(".element").removeClass("disableTmp");
+									}
+								}, 20 * index);
+							})(i);
+						}
+					});
+				}
+				$(".element[data-type=majorityvote").each(function() {
+					$(this).find(".innerTalking p").eq(0).addClass("activeTalk");
+					startMajorityVoteTalk();
+				});
+				if($(".element[data-type=friends").length > 0) {
+					$.ajax({
+						url: "/get/following",
+						method: "GET",
+						success: function(data) {
+							$(".innerFriendsList").empty();
+							$(".innerFriendsList").each(function() {
+								for(var i = 0; i < data.sites.length; i++) {
+									$(this).append(`<div class="followingDon" data-site="${data.sites[i].site}"><a href="https://${data.sites[i].site}.straw.page"><div class="innerFollowingDon"><img src="${data.sites[i].pic}" />${data.sites[i].site.length > 7 ? '<div class="marquee" data-fun-text="'+data.sites[i].site+'"></div>' : '<p>'+data.sites[i].site+'</p>'}</div></a></div>`);
+								}
+							});
+						}
+					});
+				}
+				$(document).on("click", ".innerTalking", function() {
+					var ctxTalk = $(this).find(".activeTalk");
+					var ctxScene = $(this).closest(".scene");
+					if($(ctxTalk).next("p").length > 0) {
+						$(ctxTalk).empty();
+						$(ctxTalk).removeClass("activeTalk");
+						$(ctxTalk).next("p").addClass("activeTalk");
+						startMajorityVoteTalk();
+					} else {
+						if($(ctxScene).next(".scene").length > 0) {
+							$(ctxScene).next(".scene").addClass("active");
+							$(ctxScene).find(".activeTalk").removeClass("activeTalk");
+							$(ctxScene).removeClass("active");
+							$(ctxScene).next(".scene").find(".innerTalking p").eq(0).addClass("activeTalk");
+							startMajorityVoteTalk();
+						} else {
+							$(".activeTalk").removeClass("activeTalk");
+							$(this).closest(".element").find(".active").removeClass("active");
+							$(this).closest(".element").find(".scene").eq(0).addClass("active");
+							$(this).closest(".element").find(".scene.active .innerTalking p").eq(0).addClass("activeTalk");
+							startMajorityVoteTalk();
+						}
+					}
+				});
+				var amaCtx;
+				$(document).on("click", ".spotItem", function() {
+					$(amaCtx).find("img").remove();
+					$(amaCtx).find(".askExtra").append(`<img src="${$(this).find("img").attr("src")}">`);
+					$(amaCtx).data("song", $(this).find("h5").text());
+					$(amaCtx).data("artist", $(this).find("p").text());
+					$(amaCtx).data("sound", $(this).find(".spotMeta").attr("data-sound"));
+					$(".spotSearch").removeClass("bringUp");
+				});
+				$(document).on("click", ".askExtra", function() {
+					amaCtx = $(this).closest(".element");
+					$(".spotSearch").addClass("bringUp");
+				});
+				$(document).on("click", ".spotSearch .closer", function() {
+					$(".spotSearch").removeClass("bringUp");
+				});
+				$(document).on("click", ".element[data-scrollto]", function(e) {
+					e.stopImmediatePropagation();
+					var getScrollID = $(this).data("scrollto").trim();
+					$('html, body').animate({
+						scrollTop: $(`.element[data-uid=${getScrollID}]`).offset().top
+					}, 400);
+				});
+
+				function convertRemToPixels(rem) {
+					return rem * parseFloat(getComputedStyle($(".content")[0]).fontSize);
+				}
+
+				function calculateH(desiredHeight) {
+					const remInPixels = convertRemToPixels(1);
+					const multiplier = 2.34375;
+					const baseHeight = remInPixels * multiplier;
+					const h = desiredHeight / baseHeight;
+					return h;
+				}
+				$(window).on("load", function() {
+					$(".element[data-type=blogcontent]").each(function() {
+						var getBound = $(this)[0].getBoundingClientRect();
+						var oldH = parseFloat($(this).css("--h"));
+						var oldY = parseFloat($(this).css("--y"));
+						var diffH = calculateH(getBound.height) - oldH;
+						$(".element").not(this).each(function() {
+							var ctxBound = $(this)[0].getBoundingClientRect();
+							if(ctxBound.left >= getBound.left && ctxBound.right <= getBound.right) {
+								var ctxY = parseFloat($(this).css("--y"));
+								if(ctxY >= oldY + oldH) {
+									$(this).css("--y", ctxY + diffH);
+								}
+							}
+						});
+					});
+					calculateEditorHeight();
+				});
+				</script>
+</body>
+
+</html>
